@@ -1,6 +1,6 @@
 package ddl
 
-type Porter interface {
+type Fetcher interface {
 
     // 检查数据源是否有更新
     HasUpdate() bool
