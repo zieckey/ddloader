@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
+    // 这个main只是一个示例代码，报警和日志都是默认的方式（记录本地日志）
+    // 各个业务方可以根据ddl库，定制自己的下载器，报警和日志都可以自定义
+
+
     m := new(ddl.Main)
     err := m.Init()
     if err != nil {

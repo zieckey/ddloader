@@ -24,6 +24,10 @@ func (m* Main) Init() error {
 }
 
 func (m* Main) Run() error {
+
+    // 注意，下载文件过程中，如果下载失败或其他需要报警时，需要调用 Alarm(msg,l,m.C.INI) 来报警
+    // Alarm() 函数已经做好了封装，会调用上层应用
+
     // 3. 遍历 Config.DataItems
     //      a. 挨个读取 DataItem
     //      b. 根据 DataItem 数据成员 DataSourceAddress 选择合适的 Fetcher，并下载数据，并放置到 DestinationPath（注意：先写临时文件，然后用move指令）

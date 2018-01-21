@@ -42,3 +42,7 @@ var defaultAlarmCallback AlarmCallback
 func SetAlarm(f AlarmCallback) {
     defaultAlarmCallback = f
 }
+
+func Alarm(msg string, l AlarmLevel, ini* goini.INI) error {
+    return defaultAlarmCallback(msg, l, ini)
+}
