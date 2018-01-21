@@ -26,7 +26,7 @@ func (m* Main) Init() error {
 func (m* Main) Run() error {
     // 3. 遍历 Config.DataItems
     //      a. 挨个读取 DataItem
-    //      b. 根据 DataItem 数据成员 DataSourceAddress 选择合适的 Fetcher，并下载数据，并放置到 DestinationPath
+    //      b. 根据 DataItem 数据成员 DataSourceAddress 选择合适的 Fetcher，并下载数据，并放置到 DestinationPath（注意：先写临时文件，然后用move指令）
     //      c. 下载成功后，执行指定的shell命令 DataItem.ShellCommand
     // 4. 等所有的 DataItem 都下载完成后，执行全局shell命令 Config.OnUpdatedShellCommand
     return nil
